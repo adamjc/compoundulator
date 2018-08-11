@@ -1,0 +1,69 @@
+<html>
+   <meta charset="UTF-8"> 
+  <head>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <title>Compoudulator</title>
+  <body>
+    <h1>Compoundulator</h1>
+    <div id="inputs">
+      <div>
+        <span>Principle</span><input class="input" type="number" id="principle" placeholder="1000">
+      </div>
+
+      <div>
+          <span>Monthly Deposit</span><input class="input" type="number" id="monthly-deposit" placeholder="10">
+        </div>
+
+      <div>
+        <span>Interest Rate (%)</span><input class="input" type="number" id="interest" placeholder="5">
+      </div>
+
+      <div>
+        <span>Compound Frequency</span>
+        <select class="input" id="compound-freq">
+          <option value="1">Yearly</option>
+          <option value="12">Monthly</option>
+          <option value="52">Weekly</option>
+          <option value="365">Daily</option>
+        </select>
+      </div>
+
+      <div>
+        <span>Years</span><input class="input" type="number" id="years" placeholder="10">
+      </div>
+
+      <div id="button-wrapper">
+        <button id="calculate">Calculate</button>
+      </div>
+    </div>
+          
+    <div id="table-wrapper">
+      <table id="table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Year Deposits</th>
+            <th>Year Interest</th>
+            <th>Total Deposits</th>
+            <th>Total Interest</th>
+            <th>Balance</th>
+          </tr>          
+        </thead>
+        <tbody id="table-body">
+
+        </tbody>
+      </table>
+    </div>
+    
+    <div id="chart-wrapper">
+      <canvas id="chart"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script src="compound-interest.js"></script>
+    <script src="chart.js"></script>
+    <script src="table.js"></script>
+    <script src="app.js"></script> 
+  </body>
+</html>
