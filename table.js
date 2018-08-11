@@ -2,7 +2,7 @@ function makeTable (data) {
   let $tableBody = document.getElementById('table-body')
   $tableBody.innerHTML = '';
 
-  const $rows = data.map(el => {    
+  const $rows = data.map(el => {
     let $year = document.createElement('td')
     let $yearDeposits = document.createElement('td')
     let $yearInterest = document.createElement('td')
@@ -10,8 +10,8 @@ function makeTable (data) {
     let $totalInterest = document.createElement('td')
     let $balance = document.createElement('td')
     
-    $year.innerHTML = el.x
-    $balance.innerHTML = el.y.toLocaleString()
+    $year.innerHTML = el.year
+    $balance.innerHTML = el.balance.toLocaleString()
     $yearDeposits.innerHTML = el.yearDeposits.toLocaleString()
     $yearInterest.innerHTML = el.yearInterest.toLocaleString()
     $totalDeposits.innerHTML = el.totalDeposits.toLocaleString()

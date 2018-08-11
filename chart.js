@@ -41,11 +41,16 @@ function makeChart ($el) {
   })
 }
 
-function updateChart (chart, compoundedInterest) {  
+function updateChart (chart, compoundedInterest) {
   const data = {
     labels: Array.from(compoundedInterest.keys(), x => x + 1),
     datasets: [{      
-      data: compoundedInterest,
+      data: compoundedInterest.map(datum => {
+        return {
+          x: datum.year,
+          y: datum.balance
+        }
+      }),
       borderWidth: 2,
       backgroundColor: 'transparent',
       borderColor: '#5bd1d5',
