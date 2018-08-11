@@ -33,14 +33,17 @@ const calculateYears = (function () {
       }
       
       const compoundValue = calculateYearWithAdditions(newPrinciple, interest, compoundFreq, monthlyDeposit)
+
       return acc.concat({
         yearInterest: (compoundValue - newPrinciple),
         yearDeposits: (monthlyDeposit * 12),
-        totalDeposits: (principle + (monthlyDeposit * 12 * numberOfYears)),
+        totalDeposits: (principle + monthlyDeposit * 12 * (index + 1)),
         totalInterest: (compoundValue - principle),
         x: index + 1,
         y: calculateYearWithAdditions(newPrinciple, interest, compoundFreq, monthlyDeposit)
       })
+
+      
     }, [])
     
     console.log(compoundedInterest)
