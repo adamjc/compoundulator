@@ -21,7 +21,7 @@ const calculateYears = (function () {
   
   function calculateYears (principle, interest, compoundFreq, numberOfYears, monthlyDeposit = 0) {
     const yearsArray = Array.from(new Array(numberOfYears).keys(), x => x + 1)
-    
+
     const compoundedInterest = yearsArray.reduce((yearsData, _, index) => {    
       const newPrinciple = yearsData.length ? yearsData[index - 1].balance : principle      
       const compoundValue = calculateYearWithAdditions(newPrinciple, interest, compoundFreq, monthlyDeposit)
@@ -35,7 +35,7 @@ const calculateYears = (function () {
         balance: calculateYearWithAdditions(newPrinciple, interest, compoundFreq, monthlyDeposit)
       })
     }, [])
-    
+
     return compoundedInterest
   }
 

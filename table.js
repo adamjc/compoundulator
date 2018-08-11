@@ -6,7 +6,7 @@ function makeTable (data) {
     const keys = ['year', 'yearDeposits', 'yearInterest', 'totalDeposits', 'totalInterest', 'balance']
     let $row = document.createElement('tr')
 
-    const $els = keys.map(key => {
+    keys.forEach(key => {
       let $el = document.createElement('td')
       $el.innerHTML = el[key].toLocaleString()
       $row.appendChild($el)
