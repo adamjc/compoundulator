@@ -26,7 +26,7 @@ const calculateYears = (function () {
       const newPrinciple = yearsData.length ? yearsData[index - 1].balance : principle      
       const compoundValue = calculateYearWithAdditions(newPrinciple, interest, compoundFreq, monthlyDeposit)
 
-      return acc.concat({
+      return yearsData.concat({
         yearInterest: (compoundValue - newPrinciple),
         yearDeposits: (monthlyDeposit * 12),
         totalDeposits: (principle + monthlyDeposit * 12 * (index + 1)),
