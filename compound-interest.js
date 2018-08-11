@@ -28,7 +28,7 @@ const calculateYears = (function () {
       if (!acc.length) {
         newPrinciple = principle
       } else {
-        const lastYearsTotal = acc[index - 1].y
+        const lastYearsTotal = acc[index - 1].balance
         newPrinciple = lastYearsTotal
       }
       
