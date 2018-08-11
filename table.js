@@ -3,27 +3,14 @@ function makeTable (data) {
   $tableBody.innerHTML = '';
 
   const $rows = data.map(el => {
-    let $year = document.createElement('td')
-    let $yearDeposits = document.createElement('td')
-    let $yearInterest = document.createElement('td')
-    let $totalDeposits = document.createElement('td')
-    let $totalInterest = document.createElement('td')
-    let $balance = document.createElement('td')
-    
-    $year.innerHTML = el.year
-    $balance.innerHTML = el.balance.toLocaleString()
-    $yearDeposits.innerHTML = el.yearDeposits.toLocaleString()
-    $yearInterest.innerHTML = el.yearInterest.toLocaleString()
-    $totalDeposits.innerHTML = el.totalDeposits.toLocaleString()
-    $totalInterest.innerHTML = el.totalInterest.toLocaleString()
-
+    const keys = ['year', 'yearDeposits', 'yearInterest', 'totalDeposits', 'totalInterest', 'balance']
     let $row = document.createElement('tr')
-    $row.appendChild($year)
-    $row.appendChild($yearDeposits)
-    $row.appendChild($yearInterest)
-    $row.appendChild($totalDeposits)
-    $row.appendChild($totalInterest)
-    $row.appendChild($balance)    
+
+    const $els = keys.map(key => {
+      let $el = document.createElement('td')
+      $el.innerHTML = el[key].toLocaleString()
+      $row.appendChild($el)
+    })
 
     return $row
   })
